@@ -106,6 +106,7 @@ def parse_info(response):
         else:
             sub_dict = {}
             for item in value.split(','):
+                item = item.replace(':', '=')
                 k, v = item.rsplit('=', 1)
                 sub_dict[k] = get_value(v)
             return sub_dict
